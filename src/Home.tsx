@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import { useEffect, useState } from "react";
 import styled from "styled-components";
@@ -21,13 +20,29 @@ import {
   shortenAddress,
 } from "./candy-machine";
 
-const ConnectButton = styled(WalletDialogButton)``;
+const ConnectButton = styled(WalletDialogButton)`
+  background-color: #c52aff !important;
+  border: none !important;
+  padding: 20px !important;
+  border-radius: 10px !important;
+  color: white !important;
+  font-family: "Orbitron", sans-serif !important;
+  min-width: 150px !important;
+`;
 
 const CounterText = styled.span``; // add your styles here
 
 const MintContainer = styled.div``; // add your styles here
 
-const MintButton = styled(Button)``; // add your styles here
+const MintButton = styled(Button)`
+  background-color: #c52aff !important;
+  border: none !important;
+  padding: 20px !important;
+  border-radius: 10px !important;
+  color: white !important;
+  min-width: 150px !important;
+  font-family: "Orbitron", sans-serif !important;
+`; // add your styles here
 
 export interface HomeProps {
   candyMachineId: anchor.web3.PublicKey;
@@ -203,6 +218,7 @@ const Home = (props: HomeProps) => {
         }
       }
     })();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [wallet, props.connection]);
 
   useEffect(refreshCandyMachineState, [
@@ -213,17 +229,21 @@ const Home = (props: HomeProps) => {
 
   return (
     <main>
-      {wallet && (
+      {/* {wallet && (
         <p>Wallet {shortenAddress(wallet.publicKey.toBase58() || "")}</p>
       )}
-
+      
       {wallet && <p>Balance: {(balance || 0).toLocaleString()} SOL</p>}
 
-      {wallet && <p>Total Available: {itemsAvailable}</p>}
+      {wallet && <p>Total Available: {itemsAvailable}</p>} */}
 
-      {wallet && <p>Redeemed: {itemsRedeemed}</p>}
+      {wallet && (
+        <p>
+          {itemsRedeemed} / {itemsAvailable} Minted
+        </p>
+      )}
 
-      {wallet && <p>Remaining: {itemsRemaining}</p>}
+      {/* {wallet && <p>Remaining: {itemsRemaining}</p>} */}
 
       <MintContainer>
         {!wallet ? (
@@ -233,6 +253,10 @@ const Home = (props: HomeProps) => {
             disabled={!isWhitelisted || isSoldOut || isMinting || !isActive} //change happened here
             onClick={onMint}
             variant="contained"
+            style={{
+              textAlign: "center",
+              justifyContent: "center",
+            }}
           >
             {isSoldOut ? (
               "SOLD OUT"
