@@ -6,8 +6,10 @@ import Logo from "../../assets/images/logo.png";
 export default function MintSection(props) {
   return (
     <div className="container content">
-      <img src={Logo} alt="" className="logo" />
       <div className="row align-items-center" style={{ height: "100vh" }}>
+        <div className="col-md-12">
+          <img src={Logo} alt="" className="logo" />
+        </div>
         <div className="col-md-6 connect-wallet">
           <h1>
             WELCOME TO <br />
