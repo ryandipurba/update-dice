@@ -6,9 +6,9 @@ import Logo from "../../assets/images/logo.png";
 export default function MintSection(props) {
   return (
     <div className="container content">
-      <div className="row align-items-center" style={{ height: "100vh" }}>
+      <div className="row align-items-center mb-3">
         <div className="col-md-12">
-          <img src={Logo} alt="" className="logo" />
+          <img src={Logo} alt="" className="logo " />
         </div>
         <div className="col-md-6 connect-wallet">
           <h1>
@@ -19,8 +19,8 @@ export default function MintSection(props) {
           <App />
           {/* <p style={{ marginTop: "10px" }}>Please Connect Wallet to Mint</p>s */}
         </div>
-        <div className="col-md-6">
-          <img src={MutantTest} alt="" className="img-gif" />
+        <div className="col-md-6 mt-2">
+          <img src={MutantTest} alt="" className="img-gif img-fluid" />
         </div>
       </div>
     </div>
