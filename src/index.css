@@ -1,0 +1,16 @@
+@font-face {
+  font-family: Bbc;
+  src: url("assets/bbc.otf");
+}
+
+body {
+  margin: 0;
+  height: 100%;
+  font-family: Bbc, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* background-color: #303030; */
+  background-image: url("./assets/image/background.png");
+  background-size: cover;
+  color: #ffffff;
+}
