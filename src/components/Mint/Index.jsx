@@ -2,7 +2,7 @@ import React from "react";
 import App from "../../App";
 import "./style.css";
 import Logo from "../../assets/image/logo.png";
-import Footer from "../Footer/Index";
+import Footer from "../Footer";
 
 export default function Mint() {
   return (

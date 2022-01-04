@@ -1,12 +1,10 @@
 import React from "react";
-// import Footer from "../components/Footer/Mint/Index";
-import Mint from "../components/Mint/Index";
+import Mint from "../components/Mint";
 
 export default function Page() {
   return (
     <>
       <Mint />
-      {/* <Footer /> */}
     </>
   );
 }
